@@ -12,7 +12,7 @@ func main() {
 	r := chi.NewRouter()
 
 	fileServer := http.FileServer(http.Dir("static"))
-	r.Handle("/static/*", http.StripPrefix("/static/", fileServer))
+	r.Handle("/static/*", http.StripPrefix("/static/", staticCacheMiddleware(fileServer)))
 
 	r.Get("/login", handler.LoginPageHandler)
 	r.Post("/login-submit", handler.LoginSubmitHandler)
@@ -20,4 +20,11 @@ func main() {
 
 	log.Println("Server jalan di :3000")
 	http.ListenAndServe(":3000", r)
+}
+
+func staticCacheMiddleware(h http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-cache")
+		h.ServeHTTP(w, r)
+	})
 }
