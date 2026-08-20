@@ -2,41 +2,99 @@
 
 {{define "content"}}
 
-<div class="max-w-md mx-auto">
+<div class="max-w-md mx-auto bg-gray-100">
 
-    <!--Header-->
-    <div class="bg-teal-600 rounded-b-2xl p-6">
+	<!--Header-->
+	<div class="bg-teal-600 rounded-b-2xl p-6">
 
-        <!--Title-->
-        <div class="flex items-center justify-between mb-2">
-            <p class="text-white text-md font-bold">SaniLog</p>
-        </div>
+		<!--Title-->
+		<div class="flex items-center justify-between mb-2">
+			<p class="text-white text-md font-bold">SaniLog</p>
+		</div>
 
-        <!--Nama-Level-->
-        <div class="items-center justify-between">
-            <p class="text-xl text-white font-bold">Halo, Lion</p>
-            <p class="text-white text-sm">Level 5</p>
-        </div>
+		<!--Nama-Level-->
+		<div class="items-center justify-between">
+			<p class="text-xl text-white font-bold">Halo, Lion</p>
+			<p class="text-white text-sm">Level 5</p>
+		</div>
 
-    </div>
+		<div role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Progress">
+			<p class="text-sm font-medium text-white">25%</p>
 
-    <div class="bg-gray m-6 p-6">
+			<div class="mt-2 h-2 w-full rounded-full bg-teal-800">
+				<div class="h-full rounded-full bg-gray-200" style="width: 25%"></div>
+			</div>
 
-        <div class="bg-white rounded-xl">
-            <div class="grid grid-cols-2">
-                <div class="bg-white/20">
-                    <p class="text-sm">Total Sampah</p>
-                    <p class="text-teal-800 text-xl font-bold">124 Kg</p>
-                </div>
-                <div class="bg-white/20">
-                    <p class="text-sm">Streak</p>
-                    <p class="text-teal-800 text-xl font-bold">12 Bulan</p>
-                </div>
-            </div>
-        </div>
+		</div>
 
-    </div>
+	</div>
+
+	<div class="bg-gray m-3 p-6">
+
+		<div class="bg-white rounded-xl">
+			<div class="grid grid-cols-2 p-6">
+				<div class="bg-white/20">
+					<p class="text-sm">Total Sampah</p>
+					<p class="text-teal-800 text-xl font-bold">124 Kg</p>
+				</div>
+				<div class="bg-white/20">
+					<p class="text-sm">Streak</p>
+					<p class="text-teal-800 text-xl font-bold">12 Bulan</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg-white rounded-xl m-6 p-6">
+			<p class="p-1">Rincian Kategori</p>
+			<div role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+				aria-labelledby="UpdatingLabel">
+				<div class="flex justify-between gap-4">
+					<span id="UpdatingLabel" class="text-sm font-medium text-gray-900">Updating</span>
+
+					<span class="text-sm font-medium text-gray-900">25%</span>
+				</div>
+
+				<div class="mt-2 h-2 w-full rounded-full bg-gray-200">
+					<div class="h-full rounded-full bg-blue-600" style="width: 25%"></div>
+				</div>
+			</div>
+
+			<div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+				aria-labelledby="DownloadingLabel">
+				<div class="flex justify-between gap-4">
+					<span id="DownloadingLabel" class="text-sm font-medium text-gray-900">Downloading</span>
+
+					<span class="text-sm font-medium text-gray-900">100%</span>
+				</div>
+
+				<div class="mt-2 h-2 w-full rounded-full bg-gray-200">
+					<div class="h-full rounded-full bg-green-600" style="width: 100%"></div>
+				</div>
+			</div>
+
+			<div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+				aria-labelledby="LoadingLabel">
+				<div class="flex justify-between gap-4">
+					<span id="LoadingLabel" class="text-sm font-medium text-gray-900">Loading</span>
+
+					<span class="text-sm font-medium text-gray-900">50%</span>
+				</div>
+
+				<div class="mt-2 h-2 w-full rounded-full bg-gray-200">
+					<div class="h-full rounded-full bg-gray-600" style="width: 50%"></div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--Botom Nav-->
+	<div>
+
+	</div>
 
 </div>
+
 
 {{end}}
